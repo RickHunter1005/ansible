@@ -1,0 +1,16 @@
+---
+- name: Usar el role
+  hosts: webservers
+
+  pre_tasks:
+    - name: Mensaje pre_tasks
+      debug:
+        msg: 'Configuración previa al role'
+  
+  roles:
+    - myvhost
+
+  post_tasks:
+    - name: Mensaje post_tasks
+      debug:
+        msg: 'El server ha sido configurado'
